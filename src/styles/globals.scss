@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  cursor: url(../utils/main-cursor.svg), auto;
+  cursor: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+:root {
+  --var-color-component-white: #ffff;
+  --var-color-component-black: #000;
+  --var-color-component-primary: #0072f5;
+  --var-color-component-rgba: rgb(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+html {
+  padding-bottom: 67vh;
+}
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  translate: 0 -100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  transition: all 0.4s ease-out;
+}
+
+nav.visible {
+  top: 0;
+  translate: 0;
+  z-index: 1000;
+  transition: all 0.4s ease-out;
+}
+html {
+  background: url(../../public/background.svg);
+  height: max-content;
+  box-sizing: border-box;
+  margin: 0;
+  padding-bottom: 25vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body {
+  padding: 0;
+  height: max-content;
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100000;
+  height: 5px;
+  background: var(--var-color-component-white);
+  transform-origin: 0%;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0);  
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0); 
+}
+.textFrame span:nth-child(1) {
+  animation: textFrame 4s ease 0s infinite normal forwards;
+}
+@keyframes textFrame {
+	0%,
+	50%,
+	100% {
+		color: var(--var-color-component-primary);
+	}
+
+	25%,
+	75% {
+    color: var(--var-color-component-white);
+	}
+}
+.textFrame span:nth-child(2) {
+  animation: textFrame 8s ease 0s infinite normal forwards;
+}
+@keyframes textFrame {
+	0%,
+	50%,
+	100% {
+    color: var(--var-color-component-primary);
+	}
+
+	25%,
+	75% {
+		color: var(--var-color-component-white);
+	}
+}
+.textFrame span:nth-child(3) {
+  animation: textFrame 12s ease 0s infinite normal forwards;
+}
+@keyframes textFrame {
+	0%,
+	50%,
+	100% {
+    color: var(--var-color-component-primary);
+	}
+
+	25%,
+	75% {
+		color: var(--var-color-component-white);
+	}
+}
+.textFrame span:nth-child(4) {
+  animation: textFrame 16s ease 0s infinite normal forwards;
+}
+@keyframes textFrame {
+	0%,
+	50%,
+	100% {
+    color: var(--var-color-component-primary);
+	}
+
+	25%,
+	75% {
+		color: var(--var-color-component-white);
+	}
+}
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 1200ms ease-out, transform 600ms ease-out,
+    visibility 1200ms ease-out;
+  will-change: opacity, transform, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
