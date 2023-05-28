@@ -86,7 +86,7 @@ export default function Home() {
       </Head>
      <Navigation/>
      <motion.div className="progress-bar" style={{ scaleX }} />
-     <CursorFollower size={37} color="rgba(0,0,0,0)" />
+     <CursorFollower size={35} color="rgba(0,0,0,0)" />
      <FixedElements/>
       <main ref={scrollContainerRef} style={{ position: "fixed", width: "100%", top: 0, left: 0 }}>
      <Showcase/>
