@@ -62,6 +62,7 @@ export default function Home() {
 
   interface HomeProps {
     data: any; 
+    id: string;
   }
 
 

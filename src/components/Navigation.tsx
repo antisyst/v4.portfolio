@@ -192,18 +192,20 @@ export default function Navigation() {
 
   return (
       <Nav className={`${isNavbarVisible ? "visible" : ""}`}>
-        <Fade delay={190} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
-        <LogoCaption>
+        <Fade delay={4200} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
+          <a href="#">
+          <LogoCaption>
             <MainLogo/>
         </LogoCaption>
+          </a>
         </Fade>
-        <Fade delay={240} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
+        <Fade delay={4600} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
         <NavLinks>
-          <a href="#about">About</a>
-          <a href="#">Projects</a>
-          <a href="#">Works</a>
-          <a href="#">Contact</a>
-          <a href="#">Resume</a>
+          <a href="#works">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#works">Works</a>
+          <a href="#contact">Contact</a>
+          <a href="https://drive.google.com/file/d/17eT-G17nH_zTz_uU2PsaSlailE0oWzQl/view?usp=sharing" target="_blank">Resume</a>
         </NavLinks>
         </Fade>
         <ResumeSection>
@@ -211,7 +213,7 @@ export default function Navigation() {
           <BsPlay/>
           <audio ref={audioRef} src={musicUrl} />
          </button>
-         <a href="#">
+         <a href="https://drive.google.com/file/d/17eT-G17nH_zTz_uU2PsaSlailE0oWzQl/view?usp=sharing" target="_blank">
          <CgFileDocument/>
          </a>
         </ResumeSection>

@@ -128,7 +128,7 @@ export default function About() {
   
 
     return(
-        <AboutLayout>
+        <AboutLayout id="about">
                <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
                   <FirstContent>About Me</FirstContent>
                </Fade>

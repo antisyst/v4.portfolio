@@ -90,7 +90,7 @@ const WorksH1 = styled.h1 `
 
 export default function Works() {
     return(
-        <WorksLayout>
+        <WorksLayout id="works">
              <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
              <FirstContent>Noteworthy Works</FirstContent>
              </Fade>

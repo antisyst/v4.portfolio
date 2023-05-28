@@ -137,16 +137,16 @@ export default function Showcase() {
        <ShowcaseLayout>
         <EmptyContent/>
         <EmptyContent/>
-        <Fade delay={200} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
+        <Fade delay={4100} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
         <ShowcaseSpan className="animate__animated animate__fadeIn textFrame"><span>Hi</span>, <span>my</span> <span>name</span> <span>is</span></ShowcaseSpan>
         </Fade>
-        <Fade delay={250} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
+        <Fade delay={4400} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
         <ShowcaseH1 className="animate__animated animate__fadeIn">Ramazan Azimli</ShowcaseH1>
         </Fade>
-        <Fade delay={300} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
+        <Fade delay={4800} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
         <ShowcaseH2 className="animate__animated animate__fadeIn">I'm Frontend <ShowcaseH2Span>UI</ShowcaseH2Span> Developer<b><TbBrandReact/></b></ShowcaseH2>
         </Fade>
-        <Fade delay={350} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
+        <Fade delay={5100} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
         <ShowcaseH3 className="animate__animated animate__fadeIn">Crafting Engaging User Experiences with Creative Design & Advanced Technology.</ShowcaseH3>
         </Fade>
        </ShowcaseLayout>

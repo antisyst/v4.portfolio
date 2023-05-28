@@ -92,8 +92,8 @@ const FooterLayout = styled.footer `
 
 export default function Contact() {
     return(
-        <>
-        <ContactLayout id="contact">
+        <div id="contact">
+        <ContactLayout>
                 <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
                   <FirstContent>Contact</FirstContent>
                 </Fade>
@@ -108,6 +108,6 @@ export default function Contact() {
                 <Copyright>Copyright 2023 ©</Copyright>
         </FooterLayout>
         </Fade>
-        </>
+        </div>
     )
 }
