@@ -1,10 +1,7 @@
-import { SiInstagram } from 'react-icons/si';
 import styled from "styled-components";
-import { BsGithub } from "react-icons/bs";
-import { FaTelegramPlane } from 'react-icons/fa';
 import { Fade } from "react-awesome-reveal";
-import { BsPlayCircle } from 'react-icons/bs';
 import { useRef } from 'react';
+import { FiLinkedin, FiInstagram, FiGithub, FiPlay } from 'react-icons/fi'
 
 const StyledContainer = styled.div `
 width: 40px;
@@ -81,28 +78,28 @@ export default function FixedElements() {
                 <FixedLiElement>
                    <StyledButton onClick={handlePlayMusic} className='animate__animated animate__fadeInUp'>
                    <audio ref={audioRef} src={musicUrl} />
-                        <BsPlayCircle/>
+                        <FiPlay/>
                    </StyledButton>
                 </FixedLiElement>
             </Fade>
             <Fade delay={200} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
                 <FixedLiElement>
                    <StyledItem href='https://www.instagram.com/rmzn.dev/' className='animate__animated animate__fadeInUp' target='_blank'>
-                        <SiInstagram/>
+                        <FiInstagram/>
                    </StyledItem>
                 </FixedLiElement>
             </Fade>
             <Fade delay={250} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
                 <FixedLiElement>
-                   <StyledItem href='https://t.me/rmzn_dev' className='animate__animated animate__fadeInUp' target='_blank'>
-                        <FaTelegramPlane/>
+                   <StyledItem href='https://www.linkedin.com/in/ramazan-azimli-135475245/' className='animate__animated animate__fadeInUp' target='_blank'>
+                        <FiLinkedin/>
                    </StyledItem>
                 </FixedLiElement>
             </Fade>
             <Fade delay={300} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
                 <FixedLiElement>
                    <StyledItem href='https://github.com/antisyst' className='animate__animated animate__fadeInUp' target='_blank'>
-                        <BsGithub/>
+                        <FiGithub/>
                    </StyledItem>
                 </FixedLiElement>
             </Fade>
