@@ -74,7 +74,7 @@ export default function FixedElements() {
     return(
         <StyledContainer>
             <StyledItems>
-            <Fade delay={200} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+            <Fade delay={4200} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
                 <FixedLiElement>
                    <StyledButton onClick={handlePlayMusic} className='animate__animated animate__fadeInUp'>
                    <audio ref={audioRef} src={musicUrl} />
@@ -82,21 +82,21 @@ export default function FixedElements() {
                    </StyledButton>
                 </FixedLiElement>
             </Fade>
-            <Fade delay={200} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+            <Fade delay={4400} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
                 <FixedLiElement>
                    <StyledItem href='https://www.instagram.com/rmzn.dev/' className='animate__animated animate__fadeInUp' target='_blank'>
                         <FiInstagram/>
                    </StyledItem>
                 </FixedLiElement>
             </Fade>
-            <Fade delay={250} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+            <Fade delay={4600} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
                 <FixedLiElement>
                    <StyledItem href='https://www.linkedin.com/in/ramazan-azimli-135475245/' className='animate__animated animate__fadeInUp' target='_blank'>
                         <FiLinkedin/>
                    </StyledItem>
                 </FixedLiElement>
             </Fade>
-            <Fade delay={300} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+            <Fade delay={4800} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
                 <FixedLiElement>
                    <StyledItem href='https://github.com/antisyst' className='animate__animated animate__fadeInUp' target='_blank'>
                         <FiGithub/>
