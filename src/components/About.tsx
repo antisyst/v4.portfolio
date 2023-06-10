@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React from 'react';
-import { SiReact, SiNextdotjs, SiRedux, SiVitest, SiJquery, SiTailwindcss, SiAxios, SiJavascript, SiGit, SiBootstrap, SiJest, SiWebpack, SiBabel, SiHtml5, SiCss3, SiMui } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiRedux, SiVitest, SiJquery, SiTailwindcss, SiAxios, SiJavascript, SiGit, SiBootstrap, SiJest, SiWebpack, SiBabel, SiHtml5, SiCss3, SiMui, SiStyledcomponents } from 'react-icons/si';
+import { FaVuejs } from 'react-icons/fa';
 import { DiSass, DiNpm } from 'react-icons/di';
 import { TbBrandFramerMotion } from 'react-icons/tb';
 import  { useRef, useEffect, useState } from "react";
@@ -151,6 +152,12 @@ export default function About() {
                     </Fade>
                     <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
                     <BestSkillsItem>
+                        <FaVuejs/>
+                        <BestSkillsContent>Vue</BestSkillsContent>
+                    </BestSkillsItem>
+                    </Fade>
+                    <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+                    <BestSkillsItem>
                         <SiJavascript/>
                         <BestSkillsContent>JavaScript</BestSkillsContent>
                     </BestSkillsItem>
@@ -189,6 +196,12 @@ export default function About() {
                     <BestSkillsItem>
                         <SiVitest/>
                         <BestSkillsContent>ViteJS</BestSkillsContent>
+                    </BestSkillsItem>
+                    </Fade>
+                    <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+                    <BestSkillsItem>
+                        <SiStyledcomponents/>
+                        <BestSkillsContent>Styled C.</BestSkillsContent>
                     </BestSkillsItem>
                     </Fade>
                     <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
