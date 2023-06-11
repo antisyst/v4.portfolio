@@ -84,7 +84,7 @@ export default function FixedElements() {
             </Fade>
             <Fade delay={4400} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
                 <FixedLiElement>
-                   <StyledItem href='https://www.instagram.com/rmzn.dev/' className='animate__animated animate__fadeInUp' target='_blank'>
+                   <StyledItem href='https://www.instagram.com/rmznzz/' className='animate__animated animate__fadeInUp' target='_blank'>
                         <FiInstagram/>
                    </StyledItem>
                 </FixedLiElement>
