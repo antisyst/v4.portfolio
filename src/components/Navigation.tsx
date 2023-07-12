@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import styled from 'styled-components';
 import MainLogo from "../../logo";
 import { motion, useScroll, useSpring } from "framer-motion";
+import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 import { CgFileDocument } from 'react-icons/cg';
 import { BsPlay } from 'react-icons/bs';
@@ -62,6 +63,22 @@ const ResumeSection = styled.div `
     vertical-align: bottom;
     }
   }
+`
+const BetaTitle = styled.h4 `
+  padding: 1px 5px;
+  background: var(--var-color-component-primary);
+  color: var(--var-color-component-black);
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 32px;
+  margin-left: 6px;
+  border-radius: 5px;
+  font-family: 'General Sans',sans-serif;
+  font-weight: bold;
+  filter: drop-shadow(0 0 0.9rem var(--var-color-component-primary));
+
+
+ 
 `
 const LogoCaption = styled.div `
    vertical-align: middle;
@@ -196,16 +213,17 @@ export default function Navigation() {
           <a href="#">
           <LogoCaption>
             <MainLogo/>
+            <BetaTitle>BETA</BetaTitle>
         </LogoCaption>
           </a>
         </Fade>
         <Fade delay={4600} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
         <NavLinks>
-          <a href="#works">About</a>
+          <Link href="/about">About</Link>
           <a href="#projects">Projects</a>
           <a href="#works">Works</a>
           <a href="#contact">Contact</a>
-          <a href="https://drive.google.com/file/d/19mABVCqRszMiU4-2CNLHlvjx_i8cWlAJ/view?usp=sharing" target="_blank">Resume</a>
+          <a href="https://drive.google.com/file/d/17eT-G17nH_zTz_uU2PsaSlailE0oWzQl/view?usp=sharing" target="_blank">Resume</a>
         </NavLinks>
         </Fade>
         <ResumeSection>
@@ -213,7 +231,7 @@ export default function Navigation() {
           <BsPlay/>
           <audio ref={audioRef} src={musicUrl} />
          </button>
-         <a href="https://drive.google.com/file/d/19mABVCqRszMiU4-2CNLHlvjx_i8cWlAJ/view?usp=sharing" target="_blank">
+         <a href="https://drive.google.com/file/d/17eT-G17nH_zTz_uU2PsaSlailE0oWzQl/view?usp=sharing" target="_blank">
          <CgFileDocument/>
          </a>
         </ResumeSection>
