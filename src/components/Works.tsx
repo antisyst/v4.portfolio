@@ -88,13 +88,31 @@ const WorksH1 = styled.h1 `
     font-family: 'Clash Grotesk', sans-serif;
     `
 
-export default function Works() {
+const Works = () => {
     return(
         <WorksLayout id="works">
              <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
              <FirstContent>Noteworthy Works</FirstContent>
              </Fade>
             <WorksContainer>
+             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+            <WorksItem>
+                    <WorksH1>ETH searcher</WorksH1>
+                    <WorksButton href="https://ethsearcher.netlify.app/" target="_blank">Visit Project</WorksButton>
+                </WorksItem>
+             </Fade>
+             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+                   <WorksItem>
+                    <WorksH1>Taycan E-commerce</WorksH1>
+                    <WorksButton href="http://taycan.netlify.app/" target="_blank">Visit Project</WorksButton>
+                 </WorksItem>
+             </Fade>
+             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+                 <WorksItem>
+                    <WorksH1>World Cup Searcher</WorksH1>
+                    <WorksButton href="https://cupsearch.netlify.app" target="_blank">Visit Project</WorksButton>
+                 </WorksItem>
+             </Fade>
              <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
                 <WorksItem>
                     <WorksH1>URL Shortener</WorksH1>
@@ -105,6 +123,12 @@ export default function Works() {
                 <WorksItem>
                     <WorksH1>Translator</WorksH1>
                     <WorksButton href="https://rmznlang.netlify.app/" target="_blank">Visit Project</WorksButton>
+                </WorksItem>
+             </Fade>
+             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+            <WorksItem>
+                    <WorksH1>Smart Contract</WorksH1>
+                    <WorksButton href="https://stoken.netlify.app/" target="_blank">Visit Project</WorksButton>
                 </WorksItem>
              </Fade>
              <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
@@ -255,3 +279,4 @@ export default function Works() {
         </WorksLayout>
     )
 }
+export default Works;

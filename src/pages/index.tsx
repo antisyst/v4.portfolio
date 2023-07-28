@@ -13,7 +13,7 @@ import Works from '@/components/Works';
 import { useState } from 'react';
 import Contact from '@/components/Contact';
 
-export default function Home() {
+const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const { scrollYProgress } = useScroll();
@@ -98,3 +98,4 @@ export default function Home() {
     </Layout>
   )
 }
+export default Home;

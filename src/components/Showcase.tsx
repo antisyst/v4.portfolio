@@ -129,7 +129,7 @@ const SymbolReact = styled.b `
 const EmptyContent = styled.br `
 user-select: none;
 `
-export default function Showcase() {
+const Showcase = () => {
 
    
 
@@ -152,3 +152,4 @@ export default function Showcase() {
        </ShowcaseLayout>
     )
 }
+export default Showcase;

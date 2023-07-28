@@ -128,7 +128,7 @@ interface FadeInSectionProps {
     children: React.ReactNode;
   }
 
-export default function Projects() {
+const Projects = () => {
 
     const [isVisible, setVisible] = useState(false);
     const domRef = useRef<HTMLDivElement>(null);
@@ -274,3 +274,4 @@ export default function Projects() {
         </ProjectsLayout>
     )
 }
+export default Projects;

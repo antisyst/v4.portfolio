@@ -90,7 +90,7 @@ const FooterLayout = styled.footer `
     font-family: 'Chakra Petch', sans-serif;
 `
 
-export default function Contact() {
+const Contact = () => {
     return(
         <div id="contact">
         <ContactLayout>
@@ -111,3 +111,5 @@ export default function Contact() {
         </div>
     )
 }
+
+export default Contact;

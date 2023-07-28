@@ -60,7 +60,7 @@ interface MusicPlayerProps {
     musicUrl: string;
   }
 
-export default function FixedElements() {
+const FixedElements = () => {
 
     const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -107,3 +107,4 @@ export default function FixedElements() {
         </StyledContainer>
     )
 }
+export default FixedElements;

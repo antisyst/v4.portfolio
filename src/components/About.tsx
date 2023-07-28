@@ -83,6 +83,7 @@ const SelectedSkillsItem = styled.div `
         width: 50px;
         vertical-align: middle;
         color: var(--var-color-component-primary);
+        transition: all 0.3s ease-out;
     }
 
     &:hover {
@@ -124,7 +125,7 @@ const BestSkillsContent = styled.h1 `
 
     
 
-export default function About() {
+const About = () => {
 
   
 
@@ -275,3 +276,4 @@ export default function About() {
         </AboutLayout>
     )
 }
+export default About;

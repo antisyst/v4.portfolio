@@ -166,7 +166,7 @@ interface MusicPlayerProps {
 }
 
 
-export default function Navigation() {
+const Navigation = () => {
   const lastScrollTop = useRef(0);
 
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
@@ -210,20 +210,20 @@ export default function Navigation() {
   return (
       <Nav className={`${isNavbarVisible ? "visible" : ""}`}>
         <Fade delay={4200} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
-          <a href="#">
+          <Link href="#">
           <LogoCaption>
             <MainLogo/>
             <BetaTitle>BETA</BetaTitle>
         </LogoCaption>
-          </a>
+          </Link>
         </Fade>
         <Fade delay={4600} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
         <NavLinks>
-          <Link href="/about">About</Link>
+          <Link href="#about">About</Link>
           <a href="#projects">Projects</a>
-          <a href="#works">Works</a>
-          <a href="#contact">Contact</a>
-          <a href="https://drive.google.com/file/d/1wusjgbOyPZ9bMNk_Pun0l-yglmfc8wkw/view?usp=sharing" target="_blank">Resume</a>
+          <Link href="#works">Works</Link>
+          <Link href="#contact">Contact</Link>
+          <Link href="https://drive.google.com/file/d/1wusjgbOyPZ9bMNk_Pun0l-yglmfc8wkw/view?usp=sharing" target="_blank">Resume</Link>
         </NavLinks>
         </Fade>
         <ResumeSection>
@@ -231,10 +231,11 @@ export default function Navigation() {
           <BsPlay/>
           <audio ref={audioRef} src={musicUrl} />
          </button>
-         <a href="https://drive.google.com/file/d/1wusjgbOyPZ9bMNk_Pun0l-yglmfc8wkw/view?usp=sharing" target="_blank">
+         <Link href="https://drive.google.com/file/d/1wusjgbOyPZ9bMNk_Pun0l-yglmfc8wkw/view?usp=sharing" target="_blank">
          <CgFileDocument/>
-         </a>
+         </Link>
         </ResumeSection>
       </Nav>
   );
 };
+export default Navigation;

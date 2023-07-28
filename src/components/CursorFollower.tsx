@@ -47,7 +47,7 @@ const CursorFollower: React.FC<CursorFollowerProps> = ({ size, color }) => {
         height: size,
         borderRadius: '50%',
         backgroundColor: color,
-        backdropFilter: 'invert(1)',
+        backdropFilter: 'invert(1) blur(3px)',
         border: '2px solid var(--var-color-component-white)',
         pointerEvents: 'none',
         zIndex: 9999,
