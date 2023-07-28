@@ -223,7 +223,7 @@ export default function Navigation() {
           <a href="#projects">Projects</a>
           <a href="#works">Works</a>
           <a href="#contact">Contact</a>
-          <a href="https://drive.google.com/file/d/17eT-G17nH_zTz_uU2PsaSlailE0oWzQl/view?usp=sharing" target="_blank">Resume</a>
+          <a href="https://drive.google.com/file/d/1wusjgbOyPZ9bMNk_Pun0l-yglmfc8wkw/view?usp=sharing" target="_blank">Resume</a>
         </NavLinks>
         </Fade>
         <ResumeSection>
@@ -231,7 +231,7 @@ export default function Navigation() {
           <BsPlay/>
           <audio ref={audioRef} src={musicUrl} />
          </button>
-         <a href="https://drive.google.com/file/d/17eT-G17nH_zTz_uU2PsaSlailE0oWzQl/view?usp=sharing" target="_blank">
+         <a href="https://drive.google.com/file/d/1wusjgbOyPZ9bMNk_Pun0l-yglmfc8wkw/view?usp=sharing" target="_blank">
          <CgFileDocument/>
          </a>
         </ResumeSection>
