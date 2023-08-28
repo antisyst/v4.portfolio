@@ -47,6 +47,8 @@ const ProjectItem = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: clipPathAnimation 1s forwards;
+    animation-delay: 0.5s;
     margin: 7px;
     justify-content: center;
     width: 410px;
@@ -57,6 +59,14 @@ const ProjectItem = styled.div `
     height: 450px;
     padding: 35px 30px;
     background: var(--var-color-component-rgba);
+
+
+    @keyframes clipPathAnimation {
+        to {
+          clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+          opacity: 1;
+        }
+      }
 
     &:hover {
         transition: all 0.4s ease-out;
@@ -110,7 +120,7 @@ const ProjectButton = styled.a `
     font-weight: bold;
     margin-top: 30px;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 2px;
     transition: all 0.4s ease-out;
     font-size: 20px;
     filter: drop-shadow(0 0 0.1rem var(--var-color-component-primary));

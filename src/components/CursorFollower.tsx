@@ -15,7 +15,7 @@ const CursorFollower: React.FC<CursorFollowerProps> = ({ size, color }) => {
       gsap.to(cursorRef.current, {
         x: e.clientX - size / 2,
         y: e.clientY - size / 2,
-        duration: 0.7,
+        duration: 1,
         ease: 'power3.out',
       });
     }
@@ -46,11 +46,12 @@ const CursorFollower: React.FC<CursorFollowerProps> = ({ size, color }) => {
         width: size,
         height: size,
         borderRadius: '50%',
+        filter: 'filter: drop-shadow(0 0 0.75rem var(--var-color-component-white));',
         backgroundColor: color,
-        backdropFilter: 'invert(1) blur(3px)',
         border: '2px solid var(--var-color-component-white)',
         pointerEvents: 'none',
         zIndex: 9999,
+        animation: 'CursorAnim 5s ease 0s infinite normal forwards'
       }}
     ></CursorFollower>
   );

@@ -4,8 +4,6 @@ import { SiReact, SiNextdotjs, SiRedux, SiVitest, SiJquery, SiTailwindcss, SiAxi
 import { FaVuejs } from 'react-icons/fa';
 import { DiSass, DiNpm } from 'react-icons/di';
 import { TbBrandFramerMotion } from 'react-icons/tb';
-import  { useRef, useEffect, useState } from "react";
-import { gsap } from "gsap";
 import TypeScriptLogo from "@/utils/typescript";
 import { Fade } from "react-awesome-reveal";
 
@@ -93,7 +91,7 @@ const SelectedSkillsItem = styled.div `
 const BestSkillsItem = styled.div `
     display: flex;
     flex-direction: row;
-    background:  rgb(18, 18, 18, 0.6);
+    background:  rgb(0, 0, 0, 0.3);
     align-items: center;
     width: 280px;
     height: 90px;
@@ -105,10 +103,25 @@ const BestSkillsItem = styled.div `
     border-radius: 16px;
 
     svg {
+        animation: UIFrame 6s ease 0s infinite normal forwards;
         font-size: 50px;
         width: 50px;
         vertical-align: middle;
         color: var(--var-color-component-primary);
+
+
+        @keyframes UIFrame {
+            0%,
+            50%,
+            100% {
+              filter: drop-shadow(0 0 0.4rem var(--var-color-component-primary)) brightness(0.9);
+            }
+          
+            25%,
+            75% {
+              filter: drop-shadow(0 0 0.2rem var(--var-color-component-primary)) brightness(1.1233);
+            }
+          }
     }
 
     &:hover {

@@ -31,9 +31,6 @@ padding-left: 30px;
     font-size: calc(10px + 6.4vmin);
 }
 `
-const EmptyContent = styled.br `
-    user-select: none;
-`
 const WorksContainer = styled.div `
     display: flex;
     flex-direction: row;

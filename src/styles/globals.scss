@@ -16,7 +16,7 @@
 }
 @media only screen and (max-width: 768px) {
 html {
-  padding-bottom: 67vh;
+  padding-bottom: 60vh;
 }
 }
 nav {
@@ -38,7 +38,7 @@ nav.visible {
   transition: all 0.4s ease-out;
 }
 html {
-  background: url(../../public/background.svg);
+  background: var(--var-color-component-black);
   height: max-content;
   box-sizing: border-box;
   margin: 0;
@@ -66,6 +66,10 @@ body {
   height: 5px;
   background: var(--var-color-component-white);
   transform-origin: 0%;
+
+  &::after {
+    filter: drop-shadow(0 0 0.9rem var(--var-color-component-primary));
+  }
 }
 
 
@@ -76,7 +80,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0); 
+  background: none; 
 }
  
 /* Handle */
@@ -86,7 +90,8 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0); 
+  background: none;
+  width: 0; 
 }
 .textFrame span:nth-child(1) {
   animation: textFrame 4s ease 0s infinite normal forwards;
@@ -181,23 +186,17 @@ display: -ms-flexbox;
 display: -webkit-flex;
 /* NEW - Chrome */
 display: flex;
-/* NEW - Opera 12.1, Firefox 20+ */
 }
 #box {
 -webkit-box-flex: 1;
-/* OLD - iOS 6-, Safari 3.1-6 */
 -moz-box-flex: 1;
-/* OLD - Firefox 19- */
 -webkit-flex: 1;
-/* Chrome */
 -ms-flex: 1;
-/* IE 10 */
 flex: 1;
 width: 100%;
-/* Old syntax, otherwise collapses. */
 
 }
-/*...................*/
+
 #block-1 {
 animation-duration: 2s;	
   -webkit-animation-duration: 2s;
@@ -210,7 +209,7 @@ animation-iteration-count: 1;
 position: fixed; 
 }
 
-/*****************/
+
 #loader-wrap {
   display: -webkit-box;
 display: -moz-box;
@@ -228,7 +227,7 @@ margin-top: 0px;
 top: 0px;
 }
 
-/***************/
+
 #loading-center{
   width: 100%;
   height: 100%;
@@ -255,14 +254,13 @@ display: flex;
 #object{
   width: 200px;
   height: 200px;
-Background-image: url(https://reech.ca/wp-content/uploads/2017/09/reech-logo-no-text.svg);
 background-repeat: no-repeat;
 margin-right: auto;
   margin-left: auto;
   margin-top: 20px;
 }
 
-/***************************/
+
 
 #object {
 animation: object 3s linear;
@@ -274,7 +272,6 @@ transform-origin: center center;
 100% {transform: scale(1); opacity:1}
 }
 
-/*********loader line******************/
 #loader {
 position: absolute;
 top: 100%;
@@ -314,9 +311,20 @@ animation: loading 4500ms 1500ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 
-/***********************/
 
-/*************************/
+@keyframes CursorAnim {
+	0%,
+	50%,
+	100% {
+    border-radius: 50%;
+	}
+
+	25%,
+	75% {
+    border-radius: 0;
+	}
+}
+
 #hero-box {
 position: relative;
 height: 100%;
@@ -325,7 +333,6 @@ width: 80%;
 
 .bg {
 position: absolute;
-  background-image: url(https://www.jeans.ch/out/pictures/generated/product/1/310_412_75/sol_fred-perry-white-men-shirt-m8272-200_f_1.png) !important;
   background-size: cover !important;
   background-position: center;
   z-index: 10000000 !important;
@@ -335,7 +342,6 @@ position: absolute;
 }
 .overlay {
  position: absolute;
-  background-image: url(https://reech.ca/wp-content/uploads/2017/10/xnado-pattern-white.svg) !important;
   background-repeat: repeat;
   background-size: contain !important;
   height: 50vh;
@@ -452,9 +458,7 @@ opacity: 1;
   z-index: 10000000 !important;
   opacity: 1;
   
--webkit-transform: rotate(-90deg);
--ms-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
+
 
 }
 #lg-ltrs {
@@ -471,9 +475,7 @@ opacity: 1;
   z-index: 10000000 !important;
   opacity: 1;
   
--webkit-transform: rotate(90deg);
--ms-transform: rotate(90deg);
--o-transform: rotate(90deg);
+
 
 }
 
@@ -516,7 +518,7 @@ to {
 }
 }
 
-/*********************/
+
 
 .slideInUp {
   animation-name: slideInUp;
@@ -574,4 +576,47 @@ animation-iteration-count: 2;
   animation-timing-function: ease-in-out;	
   -webkit-animation-timing-function: ease-in-out;	
   visibility: visible !important;
+}
+
+nav.scrolled {
+  backdrop-filter: blur(7px);
+  background: rgba(0,0,0, 0.6);
+}
+
+@keyframes AudioFrame {
+	10% {
+    height: 20px;
+  }
+  20% {
+    height: 14px;
+  }
+  30% {
+    height: 17px;
+  }
+  40% {
+    height: 6px;
+  }
+  50% {
+    height: 17px;
+  }
+  60% {
+    height: 11px;
+  }
+  70% {
+    height: 6px;
+  }
+  80% {
+    height: 14px;
+  }
+  90% {
+    height: 7px;
+  }
+  100% {
+    height: 20px;
+  }
+}
+.playFunction_action {
+  svg {
+    font-size: 18px;
+  }
 }

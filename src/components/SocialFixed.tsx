@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
-import { useRef } from 'react';
-import { FiLinkedin, FiInstagram, FiGithub, FiPlay } from 'react-icons/fi'
+import { useState } from "react";
+import { useRef } from 'react';;
+import TextComponent from "./TextIntro";
+import { FiLinkedin, FiInstagram, FiGithub, FiPlay, FiPause } from 'react-icons/fi';
 
 const StyledContainer = styled.div `
 width: 40px;
@@ -40,17 +42,27 @@ const StyledItem = styled.a `
     text-decoration-skip-ink: auto;
     color: #fff;
     position: relative;
+
+    &:hover {
+        color: var(--var-color-component-primary);
+    }
 `
 const StyledButton = styled.button `
 display: inline-block;
 text-decoration: none;
-font-size: 32px;
+border: 1.5px solid var(--var-color-component-primary);
+font-size: 33px;
 background: none;
+transition: all 0.3s ease-out;
 border: none;
 transition: all 0.2s ease-out;
 text-decoration-skip-ink: auto;
 color: #fff;
 position: relative;
+
+&:hover {
+    color: var(--var-color-component-primary);
+}
 `
 const FixedLiElement = styled.li  `
     margin: 7px 0;
@@ -61,24 +73,43 @@ interface MusicPlayerProps {
   }
 
 const FixedElements = () => {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [showText, setShowText] = useState(false);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
 
-    const audioRef = useRef<HTMLAudioElement>(null);
+    const handlePlay = () => {
+        if (audioRef.current && !isPlaying) {
+            audioRef.current.play();
+            setIsPlaying(true);
+            setShowText(true);
 
-    const handlePlayMusic = () => {
-      if (audioRef.current) {
-        audioRef.current.play();
-      }
+            setTimeout(() => {
+                setShowText(false);
+            }, 6000);
+        }
     };
-    const musicUrl = 'https://audio.jukehost.co.uk/VXEku0rDajT7KltCaY5XgVqYGg6EGRxS';
+
+    const handlePause = () => {
+        if (audioRef.current && isPlaying) {
+            audioRef.current.pause();
+            setIsPlaying(false);
+            setShowText(false);
+        }
+    };
+
+
+  const musicUrl = 'https://audio.jukehost.co.uk/WYgt9T553yqGssKzALcsXfKgxdbXZwx8';
+
     
     return(
         <StyledContainer>
+             {showText && <TextComponent text="your story isn't over yet, stay strong ♞"/>}
             <StyledItems>
             <Fade delay={4200} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
                 <FixedLiElement>
-                   <StyledButton onClick={handlePlayMusic} className='animate__animated animate__fadeInUp'>
+                   <StyledButton onClick={isPlaying ? handlePause : handlePlay} className='animate__animated animate__fadeInUp'>
                    <audio ref={audioRef} src={musicUrl} />
-                        <FiPlay/>
+                   {isPlaying ? <FiPause /> : <FiPlay />}
                    </StyledButton>
                 </FixedLiElement>
             </Fade>

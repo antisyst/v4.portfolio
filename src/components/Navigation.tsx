@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import styled from 'styled-components';
 import MainLogo from "../../logo";
-import { motion, useScroll, useSpring } from "framer-motion";
+import {  useScroll, useSpring } from "framer-motion";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 import { CgFileDocument } from 'react-icons/cg';
+import TextComponent from "./TextIntro";
 import { BsPlay } from 'react-icons/bs';
+import { FiPause, FiPlay } from 'react-icons/fi';
 
 const Nav = styled.nav `
 position: fixed;
@@ -16,7 +18,7 @@ position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--var-color-component-black);
+  background: rgba(0,0,0,0);
   gap: 20px;
   width: 100%;
   height: 100px;
@@ -25,12 +27,12 @@ position: fixed;
   .visible {
     top: 0;
   translate: 0;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(9px);
   }
   @media only screen and (max-width: 800px) {
   padding: 0 2rem;
-  backdrop-filter: blur(10px);
-  height: 90px;
+  backdrop-filter: blur(9px);
+  height: 85px;
   }
 `
 const ResumeSection = styled.div `
@@ -57,9 +59,10 @@ const ResumeSection = styled.div `
     border: none;
 
     svg {
-    font-size: 42px;
-    margin-right: 4px;
-    margin-top: -7px;
+    font-size: 30px;
+    margin-right: 8px;
+    height: 40px;
+    margin-top: -11px;
     vertical-align: bottom;
     }
   }
@@ -86,7 +89,7 @@ const LogoCaption = styled.div `
    svg {
     width: 80px;
     @media only screen and (max-width: 800px)  {
-      width: 65px;
+      width: 60px;
      }
    }
 `
@@ -177,12 +180,12 @@ const Navigation = () => {
       () => {
         var { pageYOffset } = window;
         if (pageYOffset > lastScrollTop.current) {
-          // downward scroll
+     
           setIsNavbarVisible(false);
         } else if (pageYOffset < lastScrollTop.current) {
-          // upward scroll
+          
           setIsNavbarVisible(true);
-        } // else was horizontal scroll
+        } 
         lastScrollTop.current = pageYOffset <= 0 ? 0 : pageYOffset;
       },
       { passive: true }
@@ -198,22 +201,58 @@ const Navigation = () => {
     restDelta: 0.001
   });
 
-  const audioRef = useRef<HTMLAudioElement>(null);
 
-  const handlePlayMusic = () => {
-    if (audioRef.current) {
-      audioRef.current.play();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showText, setShowText] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const handlePlay = () => {
+    if (audioRef.current && !isPlaying) {
+        audioRef.current.play();
+        setIsPlaying(true);
+        setShowText(true);
+
+        setTimeout(() => {
+            setShowText(false);
+        }, 100000);
     }
-  };
-  const musicUrl = 'https://audio.jukehost.co.uk/VXEku0rDajT7KltCaY5XgVqYGg6EGRxS';
+};
+
+const handlePause = () => {
+    if (audioRef.current && isPlaying) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+        setShowText(false);
+    }
+};
+
+
+const musicUrl = 'https://audio.jukehost.co.uk/WYgt9T553yqGssKzALcsXfKgxdbXZwx8';
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      setIsScrolled(scrollTop > 8);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
 
   return (
-      <Nav className={`${isNavbarVisible ? "visible" : ""}`}>
+      <Nav className={`${isNavbarVisible ? "visible" : ""} ${isScrolled ? 'scrolled' : ''}`}>
+          {showText && <TextComponent text="hekayə hələ bitməyib, səbrli ol ♞"/>}
         <Fade delay={4200} triggerOnce={true} direction={"down"} cascade damping={1e-1}>
           <Link href="#">
           <LogoCaption>
             <MainLogo/>
-            <BetaTitle>BETA</BetaTitle>
+            <BetaTitle>V4.1</BetaTitle>
         </LogoCaption>
           </Link>
         </Fade>
@@ -227,8 +266,8 @@ const Navigation = () => {
         </NavLinks>
         </Fade>
         <ResumeSection>
-        <button onClick={handlePlayMusic} >
-          <BsPlay/>
+        <button onClick={isPlaying ? handlePause : handlePlay} className='animate__animated animate__fadeInUp playFunction_action'>
+        {isPlaying ? <FiPause /> : <FiPlay />}
           <audio ref={audioRef} src={musicUrl} />
          </button>
          <Link href="https://drive.google.com/file/d/1wusjgbOyPZ9bMNk_Pun0l-yglmfc8wkw/view?usp=sharing" target="_blank">

@@ -6,12 +6,13 @@ import styled from 'styled-components';
 import CursorFollower from '@/components/CursorFollower';
 import FixedElements from '@/components/SocialFixed';
 import About from '@/components/About';
-import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
+import React, { useRef, useEffect, useLayoutEffect } from "react";
 import Projects from '@/components/Projects';
 import Works from '@/components/Works';
 import { useState } from 'react';
+import Ellipse from '@/components/Ellipse';
 import Contact from '@/components/Contact';
+
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -60,12 +61,6 @@ const Home = () => {
     }
   }, []);
 
-  interface HomeProps {
-    data: any; 
-    id: string;
-  }
-
-
 
   return (
     <Layout>
@@ -82,14 +77,19 @@ const Home = () => {
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
          />
       <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500&f[]=author@500,600,700&f[]=general-sans@500,600,700&f[]=outfit@800,500,700&f[]=beVietnam-pro@600,900,700,800&f[]=excon@900,700,500&f[]=chillax@600,700&f[]=nippo@700&f[]=work-sans@800,600,700,601&f[]=red-hat-display@800,900,700&f[]=clash-display@700,600&f[]=poppins@900,500,800,700,600&f[]=clash-grotesk@700,600&display=swap" rel="stylesheet"/>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
         <link rel="icon" href="/favicon.ico" />
       </Head>
      <Navigation/>
+     <Ellipse/>
      <motion.div className="progress-bar" style={{ scaleX }} />
      <CursorFollower size={35} color="rgba(0,0,0,0)" />
      <FixedElements/>
       <main ref={scrollContainerRef} style={{ position: "fixed", width: "100%", top: 0, left: 0 }}>
-     <Showcase/>
+     <Showcase />
      <About/>
      <Projects/>
      <Works/>

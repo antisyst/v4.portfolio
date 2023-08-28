@@ -108,12 +108,12 @@ const ShowcaseH2Span = styled.span `
       0%,
       50%,
       100% {
-        filter: drop-shadow(0 0 0.9rem var(--var-color-component-primary));
+        filter: drop-shadow(0 0 0.9rem var(--var-color-component-primary)) brightness(0.9);
       }
     
       25%,
       75% {
-        filter: drop-shadow(0 0 0.2rem var(--var-color-component-primary));
+        filter: drop-shadow(0 0 0.2rem var(--var-color-component-primary)) brightness(1.3233);
       }
     }
 `
