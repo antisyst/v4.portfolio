@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import CursorFollower from '@/components/CursorFollower';
 import FixedElements from '@/components/SocialFixed';
 import About from '@/components/About';
-import React, { useRef, useEffect, useLayoutEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import Projects from '@/components/Projects';
 import Works from '@/components/Works';
 import { useState } from 'react';

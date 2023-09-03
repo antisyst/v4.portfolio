@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, memo } from 'react';
 import { gsap } from 'gsap';
 import styled from 'styled-components';
 
@@ -7,7 +7,7 @@ interface CursorFollowerProps {
   color: string;
 }
 
-const CursorFollower: React.FC<CursorFollowerProps> = ({ size, color }) => {
+const CursorFollower: React.FC<CursorFollowerProps> = memo(({ size, color }) => {
   const cursorRef = useRef<HTMLDivElement>(null);
 
   const onMouseMove = (e: MouseEvent) => {
@@ -55,6 +55,6 @@ const CursorFollower: React.FC<CursorFollowerProps> = ({ size, color }) => {
       }}
     ></CursorFollower>
   );
-};
+})
 
 export default CursorFollower;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { memo } from 'react';
 
 const EllipseInt = styled.div `
     position: fixed;
@@ -91,10 +92,10 @@ animation: EllipseAnim 40s ease 0s infinite normal forwards;
 }
 `
 
-const Ellipse = () => {
+const Ellipse =  memo(() => {
     return(
     <EllipseInt></EllipseInt>
     )
-}
+});
 
 export default Ellipse;

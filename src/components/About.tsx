@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import React from 'react';
+import React, { memo } from 'react';
 import { SiReact, SiNextdotjs, SiRedux, SiVitest, SiJquery, SiTailwindcss, SiAxios, SiJavascript, SiGit, SiBootstrap, SiJest, SiWebpack, SiBabel, SiHtml5, SiCss3, SiMui, SiStyledcomponents } from 'react-icons/si';
 import { FaVuejs } from 'react-icons/fa';
 import { DiSass, DiNpm } from 'react-icons/di';
 import { TbBrandFramerMotion } from 'react-icons/tb';
 import TypeScriptLogo from "@/utils/typescript";
 import { Fade } from "react-awesome-reveal";
+
 
 
 const AboutLayout = styled.div `
@@ -138,10 +139,7 @@ const BestSkillsContent = styled.h1 `
 
     
 
-const About = () => {
-
-  
-
+const About = memo(() => {
     return(
         <AboutLayout id="about">
                <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
@@ -288,5 +286,5 @@ const About = () => {
 
         </AboutLayout>
     )
-}
+})
 export default About;

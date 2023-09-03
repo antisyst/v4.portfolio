@@ -1,5 +1,7 @@
 import styled from "styled-components";
+import React, { memo } from 'react';
 import { Fade } from "react-awesome-reveal";
+import worksData from '../database/works.json';
 
 
 const WorksLayout = styled.div `
@@ -85,195 +87,34 @@ const WorksH1 = styled.h1 `
     font-family: 'Clash Grotesk', sans-serif;
     `
 
-const Works = () => {
-    return(
-        <WorksLayout id="works">
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-             <FirstContent>Noteworthy Works</FirstContent>
-             </Fade>
-            <WorksContainer>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-            <WorksItem>
-                    <WorksH1>ETH searcher</WorksH1>
-                    <WorksButton href="https://ethsearcher.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                   <WorksItem>
-                    <WorksH1>Taycan E-commerce</WorksH1>
-                    <WorksButton href="http://taycan.netlify.app/" target="_blank">Visit Project</WorksButton>
-                 </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                 <WorksItem>
-                    <WorksH1>World Cup Searcher</WorksH1>
-                    <WorksButton href="https://cupsearch.netlify.app" target="_blank">Visit Project</WorksButton>
-                 </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>URL Shortener</WorksH1>
-                    <WorksButton href="https://rmznurl.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Translator</WorksH1>
-                    <WorksButton href="https://rmznlang.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-            <WorksItem>
-                    <WorksH1>Smart Contract</WorksH1>
-                    <WorksButton href="https://stoken.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Digital Consultancy</WorksH1>
-                    <WorksButton href="http://digitalcons.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Sign Form</WorksH1>
-                    <WorksButton href="https://rmznform.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Infinite Gallery</WorksH1>
-                    <WorksButton href="https://infinitygallery.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Advanced Navbar</WorksH1>
-                    <WorksButton href="https://perfectnav.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Truth or Dare</WorksH1>
-                    <WorksButton href="https://dogru.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Password Generator</WorksH1>
-                    <WorksButton href="https://rmznpass.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Crypto Price Track</WorksH1>
-                    <WorksButton href="https://coinpricetrack.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Quote Generator</WorksH1>
-                    <WorksButton href="https://quotepe.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Quiz App</WorksH1>
-                    <WorksButton href="https://rmznquiz.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Calculator App</WorksH1>
-                    <WorksButton href="https://rmzncalc.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Music Player</WorksH1>
-                    <WorksButton href="https://mscplyr.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>To Do App</WorksH1>
-                    <WorksButton href="https://rmzntodo.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Country Info</WorksH1>
-                    <WorksButton href="http://reginfo.netlify.app/" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Pricing Cards</WorksH1>
-                    <WorksButton href="https://plans-card.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Meme Tool</WorksH1>
-                    <WorksButton href="https://memegenapp.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Cars Marketplace</WorksH1>
-                    <WorksButton href="https://zastcars.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>CDN Network</WorksH1>
-                    <WorksButton href="https://cdnverse.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Junior Portfolio Template</WorksH1>
-                    <WorksButton href="https://cdnverse.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>E-commerce Template</WorksH1>
-                    <WorksButton href="https://exowear.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Beautiful Carousel</WorksH1>
-                    <WorksButton href="https://landsense.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Collapse</WorksH1>
-                    <WorksButton href="https://rmzncollapse.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Backend Template</WorksH1>
-                    <WorksButton href="https://jamesrobert.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Awesome Landing Page</WorksH1>
-                    <WorksButton href="https://devolve.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                <WorksItem>
-                    <WorksH1>Virtual  Keyboard</WorksH1>
-                    <WorksButton href="https://vrkey.netlify.app" target="_blank">Visit Project</WorksButton>
-                </WorksItem>
-             </Fade>
-            </WorksContainer>
-        </WorksLayout>
-    )
+ interface WorkItem {
+  WorksH1: string;
+  WorksButton: {
+    href: string;
+    target: string;
+  };
 }
-export default Works;
+
+const Works = memo(() => {
+    const works: WorkItem[] = worksData;
+  
+    return (
+      <WorksLayout id="works">
+        <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+          <FirstContent>Noteworthy Works</FirstContent>
+        </Fade>
+        <WorksContainer>
+          {works.map((work, index) => (
+            <Fade key={index} delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+              <WorksItem>
+                <WorksH1>{work.WorksH1}</WorksH1>
+                <WorksButton href={work.WorksButton.href} target={work.WorksButton.target}>Visit Project</WorksButton>
+              </WorksItem>
+            </Fade>
+          ))}
+        </WorksContainer>
+      </WorksLayout>
+    );
+  })
+
+  export default Works;

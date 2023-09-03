@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { TbBrandReact } from 'react-icons/tb';
 import { Fade } from "react-awesome-reveal";
+import { memo } from "react";
 
 
 const ShowcaseLayout = styled.div `
@@ -117,19 +118,11 @@ const ShowcaseH2Span = styled.span `
       }
     }
 `
-const SymbolReact = styled.b `
-    vertical-align: bottom;
-
-    svg {
-    vertical-align: bottom;
-    font-size: 10px;
-    }
-`
 
 const EmptyContent = styled.br `
 user-select: none;
 `
-const Showcase = () => {
+const Showcase = memo(() => {
 
    
 
@@ -151,5 +144,5 @@ const Showcase = () => {
         </Fade>
        </ShowcaseLayout>
     )
-}
+});
 export default Showcase;

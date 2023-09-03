@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { GetServerSideProps } from 'next';
+import { memo } from 'react';
 
 const TextIntroPackage = styled.div `
     position: fixed;
@@ -95,7 +96,7 @@ interface TextComponentProps {
   text: string;
 }
 
-const TextComponent: React.FC<TextComponentProps> = ({ text }) => {
+const TextComponent: React.FC<TextComponentProps> = memo(({ text }) => {
   return (
     <TextIntroPackage>
       <p className="animate__animated animate__fadeInDown animate__fadeOutDown">
@@ -103,7 +104,7 @@ const TextComponent: React.FC<TextComponentProps> = ({ text }) => {
       </p>
     </TextIntroPackage>
   );
-};
+})
 
 export async function getServerSideProps() {
   const text = "your story isn't over yet, stay strong ♞";

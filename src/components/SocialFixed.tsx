@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRef } from 'react';;
 import TextComponent from "./TextIntro";
 import { FiLinkedin, FiInstagram, FiGithub, FiPlay, FiPause } from 'react-icons/fi';
+import { memo } from "react";
 
 const StyledContainer = styled.div `
 width: 40px;
@@ -72,7 +73,7 @@ interface MusicPlayerProps {
     musicUrl: string;
   }
 
-const FixedElements = () => {
+const FixedElements = memo(() => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [showText, setShowText] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -137,5 +138,6 @@ const FixedElements = () => {
             </StyledItems>
         </StyledContainer>
     )
-}
+});
+
 export default FixedElements;

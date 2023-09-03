@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 import { useState, useRef, useEffect } from "react";
+import { memo } from "react";
+import projectsData from '../database/projects.json';
+
 
 
 const ProjectsLayout = styled.div `
@@ -134,11 +137,9 @@ const ProjectButton = styled.a `
         cursor: none;
     }
 `
-interface FadeInSectionProps {
-    children: React.ReactNode;
-  }
 
-const Projects = () => {
+
+const Projects = memo(() => {
 
     const [isVisible, setVisible] = useState(false);
     const domRef = useRef<HTMLDivElement>(null);
@@ -159,129 +160,26 @@ const Projects = () => {
 
     return(
         <ProjectsLayout id="projects">
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-              <FirstContent>Some Things I’ve Built</FirstContent>
+        <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+          <FirstContent>Some Things I’ve Built</FirstContent>
+        </Fade>
+        <ProjectsContainer>
+          {projectsData.projects.map((project, index) => (
+            <Fade key={index} delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
+              <ProjectItem>
+                <ProjectItemH1>{project.title}</ProjectItemH1>
+                <ProjectDomain href={project.domain} target="_blank">{project.domain}</ProjectDomain>
+                <ProjectContent>{project.description}</ProjectContent>
+                <TechStack>
+                  <TechStackItems>{project.techStack.join(', ')}</TechStackItems>
+                </TechStack>
+                <ProjectButton href={project.projectLink} target="_blank">Visit Project</ProjectButton>
+              </ProjectItem>
             </Fade>
-                <ProjectsContainer>
-             <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                    <ProjectItem>
-                        <ProjectItemH1>datan - real-time chat app</ProjectItemH1>
-                        <ProjectDomain href="https://datan.netlify.app" target="_blank">datan.netlify.app</ProjectDomain>
-                        <ProjectContent>
-                        datan is user-friendly platform that allows you to connect with friends in real-time.
-                        </ProjectContent>
-                        <TechStack>
-                            <TechStackItems>ReactJS, TypeScript, Firebase, SASS</TechStackItems>
-                        </TechStack>
-                        <ProjectButton href="https://datan.netlify.app" target="_blank">Visit Project</ProjectButton>
-                    </ProjectItem>
-            </Fade>
-            <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                    <ProjectItem>
-                        <ProjectItemH1>voicex - voice to text generator</ProjectItemH1>
-                        <ProjectDomain href="http://voicexapp.netlify.app/" target="_blank">voicexapp.netlify.app</ProjectDomain>
-                        <ProjectContent>
-                        Modern and user-friendly and that allows users to easily convert their speech into text.
-                        </ProjectContent>
-                        <TechStack>
-                            <TechStackItems>ReactJS, Redux, SASS,  Toolkit</TechStackItems>
-                        </TechStack>
-                        <ProjectButton href="http://voicexapp.netlify.app/" target="_blank">Visit Project</ProjectButton>
-                    </ProjectItem>
-            </Fade>
-            <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                    <ProjectItem>
-                        <ProjectItemH1>raxios - movie search app</ProjectItemH1>
-                        <ProjectDomain href="https://raxios.netlify.app/" target="_blank">raxios.netlify.app</ProjectDomain>
-                        <ProjectContent>
-                        The app displays a list of matching movies with their posters and description.
-                        </ProjectContent>
-                        <TechStack>
-                            <TechStackItems>ReactJS, TypeScript, Axios, REST</TechStackItems>
-                        </TechStack>
-                        <ProjectButton href="https://raxios.netlify.app/" target="_blank">Visit Project</ProjectButton>    
-                    </ProjectItem>
-            </Fade>
-            <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                    <ProjectItem>
-                        <ProjectItemH1>.notemind - create notes</ProjectItemH1>
-                        <ProjectDomain href="https://notemind.netlify.app" target="_blank">notemind.netlify.app</ProjectDomain>
-                        <ProjectContent>
-                        You can quickly create unlimited new notes and collections.
-                        </ProjectContent>
-                        <TechStack>
-                            <TechStackItems>ReactJS, TypeScript, SASS, MUI </TechStackItems>
-                        </TechStack>
-                        <ProjectButton href="https://notemind.netlify.app" target="_blank">Visit Project</ProjectButton>
-                    </ProjectItem>
-            </Fade>
-            <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                    <ProjectItem>
-                        <ProjectItemH1>weatvibe - today weather</ProjectItemH1>
-                        <ProjectDomain href="https://weatvibe.netlify.app/" target="_blank">weatvibe.netlify.app</ProjectDomain>
-                        <ProjectContent>
-                        Get weather forecast information for all locations around the world with one touch.
-                        </ProjectContent>
-                        <TechStack>
-                            <TechStackItems>ViteJS, TypeScript, SASS, REST</TechStackItems>
-                        </TechStack>
-                        <ProjectButton href="https://weatvibe.netlify.app/" target="_blank">Visit Project</ProjectButton>
-                    </ProjectItem>
-            </Fade>
-            <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                    <ProjectItem>
-                        <ProjectItemH1>vath. - fast shipping service</ProjectItemH1>
-                        <ProjectDomain href="https://vathapp.netlify.app" target="_blank">vathapp.netlify.app</ProjectDomain>
-                        <ProjectContent>
-                        We are here to rescue you. By using our shipping service, your goods will arrive in less than a day.
-                        </ProjectContent>
-                        <TechStack>
-                            <TechStackItems>ViteJS, TypeScript, SASS, REST</TechStackItems>
-                        </TechStack>
-                        <ProjectButton href="https://vathapp.netlify.app" target="_blank">Visit Project</ProjectButton>
-                    </ProjectItem>
-            </Fade>
-            <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                    <ProjectItem>
-                        <ProjectItemH1>snax - The Better Sneakers Place</ProjectItemH1>
-                        <ProjectDomain href="https://snaxstore.netlify.app" target="_blank">snaxstore.netlify.app</ProjectDomain>
-                        <ProjectContent>
-                        Get The Better Sneakers & Shoes with worldwide shipping in Snax Online Store.
-                        </ProjectContent>
-                        <TechStack>
-                            <TechStackItems>React, Redux, Axios, Bootstrap</TechStackItems>
-                        </TechStack>
-                        <ProjectButton href="https://snaxstore.netlify.app" target="_blank">Visit Project</ProjectButton>
-                    </ProjectItem>   
-            </Fade>
-            <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                    <ProjectItem>
-                        <ProjectItemH1>realcovid - COVID-19 Tracker</ProjectItemH1>
-                        <ProjectDomain href="https://realcovid.netlify.app" target="_blank">realcovid.netlify.app</ProjectDomain>
-                        <ProjectContent>
-                        Provides up-to-date information on the latest COVID-19 cases, deaths and etc.
-                        </ProjectContent>
-                        <TechStack>
-                            <TechStackItems>ReactJS, TypeScript, SASS, REST</TechStackItems>
-                        </TechStack>
-                        <ProjectButton href="https://realcovid.netlify.app" target="_blank">Visit Project</ProjectButton>
-                    </ProjectItem>
-            </Fade>
-            <Fade delay={150} triggerOnce={true} direction={"up"} cascade damping={1e-1}>
-                    <ProjectItem>
-                        <ProjectItemH1>namest. - random name generator</ProjectItemH1>
-                        <ProjectDomain href="https://namest.netlify.app" target="_blank">namest.netlify.app</ProjectDomain>
-                        <ProjectContent>
-                        Get Random Person Information fast ( name, surname, country, age, email ).
-                        </ProjectContent>
-                        <TechStack>
-                            <TechStackItems>ReactJS, TypeScript, SASS, REST</TechStackItems>
-                        </TechStack>
-                        <ProjectButton href="https://namest.netlify.app" target="_blank">Visit Project</ProjectButton>
-                    </ProjectItem>
-            </Fade>
-                </ProjectsContainer>
-        </ProjectsLayout>
+          ))}
+        </ProjectsContainer>
+      </ProjectsLayout>
     )
-}
+});
+
 export default Projects;

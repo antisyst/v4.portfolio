@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
+import { memo } from 'react';
 
 interface MusicPlayerProps {
   musicUrl: string;
 }
 
-const MusicPlayer: React.FC<MusicPlayerProps> = ({ musicUrl }) => {
+const MusicPlayer: React.FC<MusicPlayerProps> = memo(({ musicUrl }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const handlePlayMusic = () => {
@@ -19,6 +20,6 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ musicUrl }) => {
       <audio ref={audioRef} src={musicUrl} />
     </div>
   );
-};
+})
 
 export default MusicPlayer;

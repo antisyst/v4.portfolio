@@ -1,0 +1,68 @@
+{
+    "projects": [
+      {
+        "title": "datan - real-time chat app",
+        "domain": "https://datan.netlify.app",
+        "description": "datan is a user-friendly platform that allows you to connect with friends in real-time.",
+        "techStack": ["ReactJS", "TypeScript", "Firebase", "SASS"],
+        "projectLink": "https://datan.netlify.app"
+      },
+      {
+        "title": "voicex - voice to text generator",
+        "domain": "http://voicexapp.netlify.app/",
+        "description": "Modern and user-friendly app that allows users to easily convert their speech into text.",
+        "techStack": ["ReactJS", "Redux", "SASS", "Toolkit"],
+        "projectLink": "http://voicexapp.netlify.app/"
+      },
+      {
+        "title": "raxios - movie search app",
+        "domain": "https://raxios.netlify.app/",
+        "description": "The app displays a list of matching movies with their posters and description.",
+        "techStack": ["ReactJS", "TypeScript", "Axios", "REST"],
+        "projectLink": "https://raxios.netlify.app/"
+      },
+      {
+        "title": ".notemind - create notes",
+        "domain": "https://notemind.netlify.app",
+        "description": "You can quickly create unlimited new notes and collections.",
+        "techStack": ["ReactJS", "TypeScript", "SASS", "MUI"],
+        "projectLink": "https://notemind.netlify.app"
+      },
+      {
+        "title": "weatvibe - today weather",
+        "domain": "https://weatvibe.netlify.app/",
+        "description": "Get weather forecast information for all locations around the world with one touch.",
+        "techStack": ["ViteJS", "TypeScript", "SASS", "REST"],
+        "projectLink": "https://weatvibe.netlify.app/"
+      },
+      {
+        "title": "vath. - fast shipping service",
+        "domain": "https://vathapp.netlify.app",
+        "description": "We are here to rescue you. By using our shipping service, your goods will arrive in less than a day.",
+        "techStack": ["ViteJS", "TypeScript", "SASS", "REST"],
+        "projectLink": "https://vathapp.netlify.app"
+      },
+      {
+        "title": "snax - The Better Sneakers Place",
+        "domain": "https://snaxstore.netlify.app",
+        "description": "Get The Better Sneakers & Shoes with worldwide shipping in Snax Online Store.",
+        "techStack": ["React", "Redux", "Axios", "Bootstrap"],
+        "projectLink": "https://snaxstore.netlify.app"
+      },
+      {
+        "title": "realcovid - COVID-19 Tracker",
+        "domain": "https://realcovid.netlify.app",
+        "description": "Provides up-to-date information on the latest COVID-19 cases, deaths, and more.",
+        "techStack": ["ReactJS", "TypeScript", "SASS", "REST"],
+        "projectLink": "https://realcovid.netlify.app"
+      },
+      {
+        "title": "namest. - random name generator",
+        "domain": "https://namest.netlify.app",
+        "description": "Get Random Person Information fast (name, surname, country, age, email).",
+        "techStack": ["ReactJS", "TypeScript", "SASS", "REST"],
+        "projectLink": "https://namest.netlify.app"
+      }
+    ]
+  }
+  

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import MainLogo from "../../logo";
-const Loader: React.FC = () => {
+import { memo } from "react";
+
+const Loader: React.FC = memo(() => {
   useEffect(() => {
     const loadingTimeout = setTimeout(() => {
       const loadingElement = document.getElementById("loading");
@@ -58,6 +60,6 @@ const Loader: React.FC = () => {
     </div>
   </div>
   );
-};
+})
 
 export default Loader;

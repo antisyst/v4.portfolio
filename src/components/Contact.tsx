@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
-
+import { memo } from "react";
 
 
 
@@ -90,7 +90,7 @@ const FooterLayout = styled.footer `
     font-family: 'Chakra Petch', sans-serif;
 `
 
-const Contact = () => {
+const Contact = memo(() => {
     return(
         <div id="contact">
         <ContactLayout>
@@ -110,6 +110,6 @@ const Contact = () => {
         </Fade>
         </div>
     )
-}
+})
 
 export default Contact;

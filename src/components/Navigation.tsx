@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, memo } from "react";
 import styled from 'styled-components';
 import MainLogo from "../../logo";
 import {  useScroll, useSpring } from "framer-motion";
@@ -167,9 +167,12 @@ const NavLinks = styled.div `
 interface MusicPlayerProps {
   musicUrl: string;
 }
+interface NavigationProps {
+  // Define any props if needed
+}
 
 
-const Navigation = () => {
+const Navigation: React.FC<NavigationProps> = memo(() => {
   const lastScrollTop = useRef(0);
 
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
@@ -276,5 +279,5 @@ const musicUrl = 'https://audio.jukehost.co.uk/WYgt9T553yqGssKzALcsXfKgxdbXZwx8'
         </ResumeSection>
       </Nav>
   );
-};
+});
 export default Navigation;
