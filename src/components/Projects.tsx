@@ -183,3 +183,4 @@ const Projects = memo(() => {
 });
 
 export default Projects;
+Projects.displayName = 'Projects';

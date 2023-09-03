@@ -58,3 +58,4 @@ const CursorFollower: React.FC<CursorFollowerProps> = memo(({ size, color }) => 
 })
 
 export default CursorFollower;
+CursorFollower.displayName = 'CursorFollower';

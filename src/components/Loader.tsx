@@ -1,27 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import MainLogo from "../../logo";
-import { memo } from "react";
 
-const Loader: React.FC = memo(() => {
+const Loader: React.FC = () => {
+  const loadingRef = useRef<HTMLDivElement | null>(null);
+  const loadingCenterRef = useRef<HTMLDivElement | null>(null);
+  const block1Ref = useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
     const loadingTimeout = setTimeout(() => {
-      const loadingElement = document.getElementById("loading");
-      if (loadingElement) {
-        loadingElement.className = "slideDown";
+      if (loadingRef.current) {
+        loadingRef.current.className = "slideDown";
       }
     }, 3800);
 
     const loadingCenterTimeout = setTimeout(() => {
-      const loadingCenterElement = document.getElementById("loading-center");
-      if (loadingCenterElement) {
-        loadingCenterElement.className = "zoomOut";
+      if (loadingCenterRef.current) {
+        loadingCenterRef.current.className = "zoomOut";
       }
     }, 3200);
 
     const block1Timeout = setTimeout(() => {
-      const block1Element = document.getElementById("block-1");
-      if (block1Element) {
-        block1Element.className = "slideInUp";
+      if (block1Ref.current) {
+        block1Ref.current.className = "slideInUp";
       }
     }, 3800);
 
@@ -32,34 +32,34 @@ const Loader: React.FC = memo(() => {
     };
   }, []);
 
-  return(
+  return (
     <div>
-    <div className="res-container">
-      <div className="res-row">
-        <div id="block-1 b3">
-          <div id="loader-wrap">
-            <div id="loading">
-              <div id="loading-center">
-                <div id="loading-center-absolute">
-                  <MainLogo/>
-                  <div id="object" />
-                  <div id="loader" />
+      <div className="res-container">
+        <div className="res-row">
+          <div id="block-1 b3" ref={block1Ref}>
+            <div id="loader-wrap">
+              <div id="loading" ref={loadingRef}>
+                <div id="loading-center" ref={loadingCenterRef}>
+                  <div id="loading-center-absolute">
+                    <MainLogo />
+                    <div id="object" />
+                    <div id="loader" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div className="res-container">
-      <div className="res-row">
-        <div id="block-1">
-          <div id="block-2" />
+      <div className="res-container">
+        <div className="res-row">
+          <div id="block-1">
+            <div id="block-2" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
   );
-})
+};
 
 export default Loader;

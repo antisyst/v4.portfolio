@@ -99,3 +99,4 @@ const Ellipse =  memo(() => {
 });
 
 export default Ellipse;
+Ellipse.displayName = 'Ellipse';

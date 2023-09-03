@@ -141,3 +141,4 @@ const FixedElements = memo(() => {
 });
 
 export default FixedElements;
+FixedElements.displayName = 'FixedElements';

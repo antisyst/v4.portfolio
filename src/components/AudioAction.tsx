@@ -23,3 +23,4 @@ const MusicPlayer: React.FC<MusicPlayerProps> = memo(({ musicUrl }) => {
 })
 
 export default MusicPlayer;
+MusicPlayer.displayName = 'MusicPlayer';

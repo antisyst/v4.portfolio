@@ -288,3 +288,4 @@ const About = memo(() => {
     )
 })
 export default About;
+About.displayName = 'About';

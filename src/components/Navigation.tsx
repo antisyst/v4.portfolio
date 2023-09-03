@@ -281,3 +281,4 @@ const musicUrl = 'https://audio.jukehost.co.uk/WYgt9T553yqGssKzALcsXfKgxdbXZwx8'
   );
 });
 export default Navigation;
+Navigation.displayName = 'Navigation';

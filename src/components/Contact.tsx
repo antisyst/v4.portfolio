@@ -113,3 +113,4 @@ const Contact = memo(() => {
 })
 
 export default Contact;
+Contact.displayName = 'Contact';

@@ -118,3 +118,4 @@ const Works = memo(() => {
   })
 
   export default Works;
+  Works.displayName = 'Works';

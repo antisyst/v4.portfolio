@@ -117,4 +117,4 @@ export async function getServerSideProps() {
 }
 
 export default TextComponent;
-
+TextComponent.displayName = 'TextComponent';

@@ -146,3 +146,4 @@ const Showcase = memo(() => {
     )
 });
 export default Showcase;
+Showcase.displayName = 'Showcase';
