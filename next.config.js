@@ -5,7 +5,6 @@ const nextConfig = {
     styledComponents: true,
   },
   webpack: (config, { isServer }) => {
-    const TerserPlugin = require("terser-webpack-plugin");
     const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
     const CompressionPlugin = require("compression-webpack-plugin");
 
@@ -22,11 +21,6 @@ const nextConfig = {
 
       config.optimization.minimize = true;
       config.optimization.minimizer = [
-        new TerserPlugin({
-          terserOptions: {
-            compress: {},
-          },
-        }),
         new OptimizeCSSAssetsPlugin({}),
       ];
 
@@ -47,8 +41,6 @@ const nextConfig = {
       });
 
       config.devtool = 'eval-source-map';
-      
-
     }
 
     return config;
