@@ -265,7 +265,7 @@ const musicUrl = 'https://audio.jukehost.co.uk/WYgt9T553yqGssKzALcsXfKgxdbXZwx8'
           <a href="#projects">Projects</a>
           <Link href="#works">Works</Link>
           <Link href="#contact">Contact</Link>
-          <Link href="https://drive.google.com/file/d/1wusjgbOyPZ9bMNk_Pun0l-yglmfc8wkw/view?usp=sharing" target="_blank">Resume</Link>
+          <Link href="" target="_blank">Resume</Link>
         </NavLinks>
         </Fade>
         <ResumeSection>
@@ -273,7 +273,7 @@ const musicUrl = 'https://audio.jukehost.co.uk/WYgt9T553yqGssKzALcsXfKgxdbXZwx8'
         {isPlaying ? <FiPause /> : <FiPlay />}
           <audio ref={audioRef} src={musicUrl} />
          </button>
-         <Link href="https://drive.google.com/file/d/1wusjgbOyPZ9bMNk_Pun0l-yglmfc8wkw/view?usp=sharing" target="_blank">
+         <Link href="" target="_blank">
          <CgFileDocument/>
          </Link>
         </ResumeSection>
